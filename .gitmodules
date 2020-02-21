@@ -1,0 +1,3 @@
+[submodule "vim/.vim/pack/archlinux/start/fzf.vim"]
+	path = vim/.vim/pack/archlinux/start/fzf.vim
+	url = https://github.com/junegunn/fzf.vim
