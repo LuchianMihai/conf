@@ -1,0 +1,40 @@
+#!/bin/bash
+Clock() {
+    DATETIME=$(date "+%a %b %d, %H:%M")
+
+    echo -n "[$DATETIME]"
+}
+
+Battery() {
+    STAT=$(cat /sys/class/power_supply/BAT0/status)
+    BATT=$(cat /sys/class/power_supply/BAT0/capacity)
+
+    echo -n "$BATT% | $STAT"
+}
+
+bspwm() {
+    BSPWM=$(bspc query -D)
+    BUSY=$(bspc query -D -d .occupied)
+
+    for DESK in $BSPWM
+    do
+        CHAR="0"
+        if [[ $BUSY =~ $DESK ]]
+        then
+            CHAR="#"
+        fi
+        echo -n "%{A:bspc desktop $DESK -f:}"
+        if [ $DESK = $(bspc query -D -d) ]
+        then
+            echo -n "[$CHAR]"
+        else
+            echo -n "$CHAR"
+        fi
+        echo -n "%{A} "
+    done
+}
+
+while true; do
+    echo -e "%{l}$(Battery) %{c}$(Clock)%{r}$(bspwm)"
+    sleep 1
+done

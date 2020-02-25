@@ -1,0 +1,2 @@
+export WM=dwm
+exec startx
