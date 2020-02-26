@@ -13,12 +13,6 @@
   <item label="Surf Web browser">
     <action name="Execute"><execute>surf</execute></action>
   </item>
-  <item label="Firefox Web browser">
-    <action name="Execute"><execute>firefox</execute></action>
-  </item>
-  <item label="Chromium Web browser">
-    <action name="Execute"><execute>chromium</execute></action>
-  </item>
   <separator />
   <item label="CubeMX">
     <action name="Execute"><execute>cubemx</execute></action>

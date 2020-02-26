@@ -1,7 +1,5 @@
 # Created by tinnedkarma for 5.7.1
 
-bindkey -v
-
 autoload -U compinit
 zstyle ':completion:*' menu select
 compinit -d $HOME/.cache/zsh/zcompdump-$ZSH_VERSION

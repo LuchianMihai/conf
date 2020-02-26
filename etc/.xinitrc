@@ -14,13 +14,8 @@ case $session in
       exec dwm
       ;;
    openbox)
-      feh --no-fehbg --bg-scale ~/configs/imgs/dark-min-fish-red.jpg &
-      exec conky -c ~/configs/etc/conky.conf &
-      exec polybar -c ~/configs/etc/polybar.conf main &
-      exec openbox
+      feh --no-fehbg --bg-scale ~/conf/imgs/wallpaper-dell.jpg &
+      exec conky -c ~/.config/conky/conky-2.conf &
+      exec openbox-session
       ;;
-   gnome)
-      export XDG_SESSION_TYPE=x11
-      export GDK_BACKEND=x11
-      exec gnome-session
 esac
